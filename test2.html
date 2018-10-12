@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<script type="text/javascript" href=""
+
+
+<div id ="photo-feed"></div>
+
+<script>
+
+    feed = new Instafeed({
+        get: 'user',
+        userId: 41086511,
+        accessToken: '41086519.467ede5.7d8eafd2f7bd44e88a55221140dcd111',
+        target: 'photo-feed',
+        sortBy: 'most-recent',
+        limit: 5,
+        useHTTP: true,
+        template: '<li><a href="{{link}}" rel="external"><img src="{{image}}" /><span class="info"><small class="likes">{{likes}}</small><small class="date">{{model.created_time}}</small></span><span class="icon-instagram"></span><span class="black-stripe"></span></a></li>',
+        clientId: 'f91aab7e4ac145478358edb768110be2',
+        resolution: 'low_resolution',
+        filter: function(image) {
+            var date = new Date(image.created_time*1000),
+                    hour = date.getHours(),
+                    min = date.getMinutes(),
+                    thetime = hour + 'h ' + (min ? min + 'min' : '');
+            image.created_time = thetime;
+            return true;
+        },
+        after: function() {
+            // disable button if no more results to load
+            if (!this.hasNext()) {
+                loadButton.attr('disabled', 'disabled').addClass('hidden');
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

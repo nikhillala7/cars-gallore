@@ -1,0 +1,187 @@
+<!doctype html public "lice">
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>THE VIRTUAL GUIDE</title>
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="style.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="src/tagcloud.jquery.js"></script>
+
+
+    <style>
+            /* Mother effin brute force CSS reset... */
+            /* Always include after any other CSS */
+        #tagcloud {
+            resize: none;
+            border: none;
+            outline: none;
+            text-decoration: none;
+            padding: 100px;
+            margin: 0px;
+            list-style-type: none;
+        }
+
+
+            .masthead img {
+                position: relative;
+                background:  no-repeat center center fixed;
+                width: 100%;
+                height: 100%;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+
+            .masthead h1{
+                width: 100%;
+                top : 30%;
+                position: absolute;
+                color: rgba(255, 255, 255, 0.8);
+                font-size: 100px;
+                line-height: 600px;
+                font-weight: 700;
+                text-align: center;
+                text-transform: uppercase;
+                text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            }
+
+            body {
+                background-color: #444444;
+                color: #ffffff; ;
+            }
+
+            #nav.affix{
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 10;
+            }
+    </style>
+
+
+<script type="text/javascript">
+    var settings = {
+    //height of sphere container
+    height: 800,
+    //width of sphere container
+    width: 800,
+    //radius of sphere
+    radius: 250,
+    //rotation speed
+    speed: .5,
+    //sphere rotations slower
+    slower: 0.9,
+    //delay between update position
+    timer: 5,
+    //dependence of a font size on axis Z
+    fontMultiplier: 90,
+    //tag css stylies on mouse over
+    hoverStyle: {
+        border: 'none',
+        color: '#ffffff'
+    },
+    //tag css stylies on mouse out
+    mouseOutStyle: {
+        border: '',
+        color: ''
+    }
+    };
+
+    $(document).ready(function(){
+        $('#tagcloud').tagoSphere(settings);
+    });
+</script>
+
+
+</head>
+<body>
+
+<header class="masthead">
+
+    <img src="images/world.jpg">
+
+   <h1>THE VIRTUAL WORLD GUIDE</h1>
+
+</header>
+<nav class="navbar navbar-inverse navbar-static " role="navigation" id="nav">
+    <nav class="container-fluid">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"  data-target="#mainnav">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">CARS GALLORE</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="mainnav">
+            <ul class="nav navbar-nav ">
+                <li ><a href="lambo.html">lamborghini</a> </li>
+                <li ><a href="ferrari.html">Ferrari</a> </li>
+                <li><a href="bmw.html">BMW</a> </li>
+                <li><a href="mercedes.html">Mercedes</a> </li>
+                <li><a href="nissan.html">Nissan</a> </li>
+                <li><a href="dummy.html">INSTA</a> </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" >List<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li> <a href="#">first</a></li>
+                        <li> <a href="#">second</a></li>
+                        <li> <a href="#">third</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#body" onclick="getlocation()">Location</a> </li>
+            </ul>
+
+
+        </div>
+    </nav>
+</nav>
+
+
+    <div id="tagcloud" >
+        <ul>
+            <li><a href="ferrari.html" id ="ferrari">INDIA</a> </li>
+            <li><a href="lambo.html" id="lamborghini">EUROPE</a></li>
+            <li><a href="mercedes.html" id="mercedes">AUSTRALIA</a></li>
+            <li><a href="bmw.html" id="bmw">USA</a></li>
+            <li><a href="#" id="mclaren">QUEENSLAND</a></li>
+            <li><a href="#" id="buggati">CALIFORNIA</a></li>
+            <li><a href="#" id="pagani">VICTORIA</a></li>
+            <li><a href="#" id="f1">ROME</a></li>
+            <li><a href="#" id="avanti">DELHI</a></li>
+            <li><a href="#" id="dragster">MUMBAI</a></li>
+            <li><a href="#" id="tesla">GREECE</a></li>
+            <li><a href="#" id="ford">PARIS</a></li>
+            <li><a href="#" id="maybach">WALES</a></li>
+            <li><a href="#" id="cadillac">NEW YORK</a></li>
+            <li><a href="#" id="mitsubishi">BANGLORE</a></li>
+            <li><a href="#" id="dodge">FLORIDA</a></li>
+            <li><a href="#" id="chevrolet">TASMANIA </a></li>
+
+        </ul>
+    </div>
+
+
+
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $('#nav').affix({
+        offset:{
+            top: $('header').height()
+        }
+    });
+    </script>
+</body>
+</html>

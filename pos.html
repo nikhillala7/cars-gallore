@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>click button</p>
+<button onclick="getlocation()">locate </button>
+<p id  = "pos"> </p>
+
+
+
+
+
+<script>
+
+    var x  = document.getElementById("pos");
+    function  getlocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "GEOlocation not supported";
+        }
+    }
+
+
+    function showPosition(position) {
+        x.innerHTML = "latitude :" + position.coords.latitude + "<br> longitude :" + position.coords.longitude;
+    }
+
+</script>
+</body>
+</html>
